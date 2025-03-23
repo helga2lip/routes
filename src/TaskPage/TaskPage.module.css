@@ -1,0 +1,25 @@
+.task {
+  padding: 24px;
+  background-color: #32384d;
+  border-radius: 4px;
+  width: 600px;
+}
+
+.buttons {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 40px;
+}
+
+.editButton {
+  background: #f1994b;
+}
+
+.deleteButton {
+  background: #d35360;
+}
+
+.backButton {
+  margin-right: auto;
+  background: rgb(134, 139, 150);
+}

@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .listItem {
   padding: 4px 12px;
   border: none;
@@ -10,12 +15,8 @@
 
 .todoText {
   margin-right: auto;
-}
-
-.editButton {
-  background: #f1994b;
-}
-
-.deleteButton {
-  background: #d35360;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
