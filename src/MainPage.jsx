@@ -10,7 +10,6 @@ export function MainPage() {
   const [filterText, setFilterText] = useState('');
   const [filterKey, setFilterKey] = useState('');
   const [isCreating, setIsCreating] = useState(false);
-  const [refreshToDos, setRefreshToDos] = useState(false);
   const [isSorted, setIsSorted] = useState(false);
 
   const fetchTodos = (isSorted = false) => {
@@ -25,7 +24,7 @@ export function MainPage() {
 
   useEffect(() => {
     fetchTodos();
-  }, [refreshToDos]);
+  }, []);
 
   const addToDo = () => {
     setIsCreating(true);
@@ -37,10 +36,15 @@ export function MainPage() {
         title: addText,
       }),
     })
-      .then(() => {
-        setRefreshToDos(!refreshToDos)
-        setAddText('')
+      .then((response) => {
+        return response.json();
       })
+      .then((todo) => {
+        setTodos([...todos, todo])
+        setAddText('')
+      }
+
+      )
       .finally(() => setIsCreating(false));
   }
 
